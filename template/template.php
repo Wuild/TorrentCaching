@@ -9,6 +9,8 @@
         <meta name="keywords" content="torrent, cache, tfc" />
         <link rel="stylesheet" href="template/bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="template/bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
+        <script src="template/bootstrap/js/jquery-1.9.1.min.js"></script>
+        <script src="template/bootstrap/js/bootstrap.min.js"></script>
         <style type="text/css">
             body {
                 padding-top: 20px;
@@ -65,7 +67,8 @@
                     <ul class="nav nav-pills pull-right">
                         <li <?php echo (CURRENT_MODULE == "start" ? "class='active'" : "") ?>><a href="/">Home</a></li>
                         <li <?php echo (CURRENT_MODULE == "upload" ? "class='active'" : "") ?>><a href="/upload">Upload torrent</a></li>
-                        <li <?php echo (CURRENT_MODULE == "api" ? "class='active'" : "") ?>><a href="/api">API</a></li>
+                        <li <?php echo (CURRENT_MODULE == "api" ? "class='active'" : "") ?>><a href="/documentation">API</a></li>
+                        <li><a href="https://github.com/Wuild/TorrentCaching/" target="_blank">GitHub</a></li>
                     </ul>
                     <h3 class="muted"><a href="/">Torrent Caching</a></h3>
                 </div>
@@ -82,8 +85,6 @@
 
             </div>
         </div>
-        <script src="template/bootstrap/js/jquery-1.9.1.min.js"></script>
-        <script src="template/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
 

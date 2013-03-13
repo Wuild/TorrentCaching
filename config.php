@@ -10,5 +10,5 @@ define("PATH_MODULE", PATH_ROOT . "module/");
 
 
 //Absolute path to where to store torrent files
-define("PATH_TORRENTS", "/var/www/files/");
+define("PATH_TORRENTS", PATH_ROOT . "files/");
 ?>

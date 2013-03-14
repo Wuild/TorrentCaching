@@ -5,6 +5,10 @@ include("../init.php");
 if (isset($_POST['upload'])) {
 
     try {
+
+        if (!isset($_FILES['torrent']))
+            throw new Exception("Missing torrent data");
+
         $file = $_FILES['torrent'];
 
         $ext = explode(".", $file['name']);

@@ -124,7 +124,7 @@ class Bcode {
      */
     static function dict_check($d, $s) {
         if ($d["type"] != "dictionary")
-            throw new Exception("not Dict.");
+            throw new Exception("Unknown file type");
         $a = explode(":", $s);
         $dd = $d["value"];
         $ret = array();

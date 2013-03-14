@@ -5,7 +5,7 @@ $post_data = array(
     "torrent" => "@/path/to/torrent/dexter.s03.e07.torrent"   // Full path for file to upload
 );
 
-$ch = curl_init("http://torrentcaching.com/api/upload.php");
+$ch = curl_init("<?php echo URL; ?>api/upload.php");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
 $result = curl_exec($ch);

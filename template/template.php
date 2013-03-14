@@ -4,60 +4,16 @@
     <head>
         <base href="<?php echo URL; ?>" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>TFC</title>
+        <title>TorrentCaching</title>
         <meta name="description" content="Upload and cache torrent files." />
         <meta name="keywords" content="torrent, cache, tfc" />
         <link rel="stylesheet" href="template/bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="template/bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
+        <link rel="stylesheet" href="template/bootstrap/css/docs.css" type="text/css" />
         <script src="template/bootstrap/js/jquery-1.9.1.min.js"></script>
         <script src="template/bootstrap/js/bootstrap.min.js"></script>
-        <style type="text/css">
-            body {
-                padding-top: 20px;
-                padding-bottom: 40px;
-            }
 
-            /* Wrapper for page content to push down footer */
-            #wrap {
-                min-height: 100%;
-                height: auto !important;
-                height: 100%;
-                /* Negative indent footer by it's height */
-                margin: 0 auto -60px;
-            }
 
-            /* Custom container */
-            .container-narrow {
-                margin: 0 auto;
-                max-width: 700px;
-            }
-            .container-narrow > hr {
-                margin: 30px 0;
-            }
-
-            /* Main marketing message and sign up button */
-            .jumbotron {
-                margin: 60px 0;
-                text-align: center;
-            }
-            .jumbotron h1 {
-                font-size: 72px;
-                line-height: 1;
-            }
-            .jumbotron .btn {
-                font-size: 21px;
-                padding: 14px 24px;
-            }
-
-            /* Supporting marketing content */
-            .marketing {
-                margin: 60px 0;
-            }
-            .marketing p + h4 {
-                margin-top: 28px;
-            }
-
-        </style>
     </head>
     <body>
         <div id="wrap">
@@ -67,10 +23,10 @@
                     <ul class="nav nav-pills pull-right">
                         <li <?php echo (CURRENT_MODULE == "start" ? "class='active'" : "") ?>><a href="/">Home</a></li>
                         <li <?php echo (CURRENT_MODULE == "upload" ? "class='active'" : "") ?>><a href="/upload">Upload torrent</a></li>
-                        <li <?php echo (CURRENT_MODULE == "api" ? "class='active'" : "") ?>><a href="/documentation">API</a></li>
+                        <li <?php echo (CURRENT_MODULE == "documentation" ? "class='active'" : "") ?>><a href="/documentation">API Documentation</a></li>
                         <li><a href="https://github.com/Wuild/TorrentCaching/" target="_blank">GitHub</a></li>
                     </ul>
-                    <h3 class="muted"><a href="/">Torrent Caching</a></h3>
+                    <h3 class="muted"><a href="/">TorrentCaching</a></h3>
                 </div>
 
                 <hr>
@@ -80,7 +36,10 @@
                     <hr />
 
                     <div class="footer">
-                        <p>This product is created by Wuild and is opensource</p>
+                        <span style="float:left;">
+                            <iframe  src="//www.facebook.com/plugins/like.php?href=https://www.facebook.com/torrent.file.caching&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=153023661400950" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:35px;"></iframe>
+                        </span>
+                        <span style="float:right;">Powered by <a href="http://torrentcaching.com">TorrentCaching</a></span>
                     </div>
 
             </div>

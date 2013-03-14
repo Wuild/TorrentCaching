@@ -9,6 +9,9 @@ if (isset($_POST['upload'])) {
         if (!isset($_FILES['torrent']))
             throw new Exception("Missing torrent data");
 
+        if (empty($_FILES['torrent']['name']))
+            throw new Exception("No torrent file selected");
+
         $file = $_FILES['torrent'];
 
         $ext = explode(".", $file['name']);

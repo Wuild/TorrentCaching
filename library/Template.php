@@ -74,14 +74,6 @@ class Template {
     }
 
     /**
-     * Load a template file
-     * @param string $file template name with extension.
-     */
-    function loadFile($file) {
-        $this->files[] = $file;
-    }
-
-    /**
      * Set a template variable that can be used by using the __get() function
      * @param string $name variable name
      * @param string $value variable value
@@ -100,40 +92,6 @@ class Template {
     }
 
     /**
-     * Set the title of the current application
-     * @param string $title page title
-     */
-    function setTitle($title) {
-        $this->title = $title;
-    }
-
-    /**
-     * Show the sidebar on the current application
-     * @param boolean $sidebar default = false
-     */
-    function setSidebar($sidebar = false) {
-        $this->sidebar = $sidebar;
-    }
-
-    /**
-     * Add a custom javascript into the current application.
-     * this will load the $script at the current application path
-     * @param string $script javascript name
-     */
-    function addJavascript($script) {
-        $this->javascript[] = $script;
-    }
-
-    /**
-     * Add a custom stylesheet into the current application.
-     * this will load the $script at the current application path
-     * @param string $script stylesheet name
-     */
-    function addCss($script) {
-        $this->css[] = $script;
-    }
-
-    /**
      * Build the selected template or loaded templates.
      * @param string file build file, leave empty if using loadFile function
      */
@@ -144,13 +102,13 @@ class Template {
                     if (file_exists($this->path . $file))
                         include($this->path . $file);
                     else
-                        echo "Template file not found";
+                        include(PATH_MODULE . "error.php");
                 }
             }else {
                 if (file_exists($this->path . $file))
                     include($this->path . $file);
                 else
-                    echo "Template file " . $this->path . $file . " not found";
+                    include(PATH_MODULE . "error.php");
             }
         } Catch (Exception $e) {
             echo $e->getMessage();
@@ -162,30 +120,16 @@ class Template {
      * @return string returns the templates as a variable
      */
     function buildVar($file = "") {
-        if (count($this->files) > 0) {
-            foreach ($this->files as $file) {
-                ob_start();
-                if (file_exists($this->path . $file))
-                    include($this->path . $file);
-                else
-                    echo "Error 404: file not found";
+        ob_start();
+        if (file_exists($this->path . $file))
+            include($this->path . $file);
+        else
+            include(PATH_MODULE . "error.php");
 
-                $this->data .= ob_get_contents();
-                ob_end_clean();
-            }
-            return $this->data;
-        }else {
-            ob_start();
-            if (file_exists($this->path . $file))
-                include($this->path . $file);
-            else
-                echo "Error 404: file not found";
+        $this->data .= ob_get_contents();
+        ob_end_clean();
 
-            $this->data .= ob_get_contents();
-            ob_end_clean();
-
-            return $this->data;
-        }
+        return $this->data;
     }
 
 }

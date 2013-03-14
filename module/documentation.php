@@ -19,3 +19,14 @@ if (!$json->error){
     echo $json->message;
 }
 </pre>
+
+<h5>Json return code</h5>
+<pre><?php
+    $array = array(
+        "error" => false,
+        "message" => "The torrent has been successfully uploaded",
+        "url" => URL . "torrent/" . strtoupper(sha1("dexter.s03.e07")).".torrent"
+    );
+echo json_encode($array);
+    ?>
+</pre>

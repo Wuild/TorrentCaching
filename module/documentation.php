@@ -26,7 +26,7 @@ if (!$json->error){
         "error" => false,
         "message" => "The torrent has been successfully uploaded",
         "url" => URL . "torrent/" . strtoupper(sha1("dexter.s03.e07")).".torrent",
-        "magnet" => "magnet:?xt=urn:btih:" . strtoupper(sha1("dexter.s03.e07")) . $MAGNET_TRACKERS
+        "magnet" => "magnet:?xt=urn:btih:" . strtoupper(sha1("dexter.s03.e07")) . MAGNET_TRACKERS
     );
 echo json_encode($array);
     ?>

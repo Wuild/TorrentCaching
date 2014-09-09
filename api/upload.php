@@ -29,7 +29,7 @@ if (isset($_POST['upload'])) {
         $filename = $infohash . ".torrent";
 
         $file_path = PATH_TORRENTS . $filename;
-        $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . $MAGNET_TRACKERS;
+        $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . MAGNET_TRACKERS;
 
         if (move_uploaded_file($file['tmp_name'], $file_path)) {
             $array = array(

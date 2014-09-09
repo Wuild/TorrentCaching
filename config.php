@@ -17,7 +17,6 @@ $magnet_trackers[] = "udp://tracker.openbittorrent.com:80/announce";
 $magnet_trackers[] = "udp://tracker.publicbt.com:80";
 $magnet_trackers[] = "udp://tracker.ccc.de:80";
 $magnet_trackers[] = "udp://tracker.istole.it:80";
-$trackers = '&tr=' . implode('&tr=', $magnet_trackers);
 
-define("MAGNET_TRACKERS", $trackers);
+define("MAGNET_TRACKERS", '&tr=' . implode('&tr=', $magnet_trackers));
 ?>

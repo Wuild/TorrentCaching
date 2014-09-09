@@ -29,12 +29,14 @@ if (isset($_POST['upload'])) {
         $filename = $infohash . ".torrent";
 
         $file_path = PATH_TORRENTS . $filename;
+        $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . $MAGNET_TRACKERS;
 
         if (move_uploaded_file($file['tmp_name'], $file_path)) {
             $array = array(
                 "error" => false,
                 "message" => "The torrent has been successfully uploaded",
-                "url" => URL . "torrent/" . $filename
+                "url" => URL . "torrent/" . $filename,
+                "magnet" = $magnet_link
             );
             die(json_encode($array));
         }

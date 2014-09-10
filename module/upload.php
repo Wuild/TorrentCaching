@@ -45,9 +45,10 @@ if (isset($_POST['upload'])) {
         $filename = $infohash . ".torrent";
 
         $file_path = PATH_TORRENTS . $filename;
+        $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . MAGNET_TRACKERS;
 
         if (move_uploaded_file($file['tmp_name'], $file_path)) {
-            echo "<br /><br />The torrent has been successfully uploaded, to download it follow the link below<br />  <a href='" . URL . "torrent/$filename'>" . URL . "torrent/" . $filename . "</a>";
+            echo "<br /><br />The torrent has been successfully uploaded, to download it follow the link below<br />  <a href='" . URL . "torrent/$filename'>" . URL . "torrent/" . $filename . "</a><br /><a href='" . $magnet_link . "'>Magnet Link</a>";
         }
     } Catch (Exception $e) {
         echo $e->getMessage();

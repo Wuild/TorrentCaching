@@ -3,15 +3,14 @@
 if (!isset($_GET['var_a']))
     die("missing torrent name");
 
-$filename = $_GET['var_a'];
+$filename = basename($_GET['var_a']);
 
-if(!file_exists(PATH_TORRENTS.$filename))
-    die("torrent file does not exists");    
-
-
+if( preg_match("/^([0-F]{40})\.torrent$/", $filename) != 1 ||  !file_exists(PATH_TORRENTS.$filename) ) {
+    header("HTTP/1.1 404 Not Found");
+    die("Torrent file does not exist!");
+} 
 
 $file = file_get_contents(PATH_TORRENTS.$filename);
-
 
 header('Content-Disposition: attachment; filename="' . $filename . '"');
 header("Content-Type: application/x-bittorrent");

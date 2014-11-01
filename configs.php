@@ -5,8 +5,8 @@ $config = new stdClass();
 $config->website = new stdClass();
 $config->website->name = "TorrentCaching";
 $config->website->url = "http://torrentcaching.com/";
-$config->website->keywords = "";
-$config->website->description = "";
+$config->website->keywords = "torrent, cache, tfc, torrentcaching, caching";
+$config->website->description = "Upload and cache torrent files.";
 
 $config->paths = new stdClass();
 $config->paths->root = dirname(__FILE__) . "/";

@@ -12,6 +12,8 @@ $content = $page->Build();
     <link href="template/css/bootstrap.min.css" rel="stylesheet">
     <link href="template/css/style.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <meta name="keywords" content="<?php echo _configs()->website->keywords ?>"/>
+    <meta name="description" content="<?php echo _configs()->website->description ?>"/>
     <script src="template/js/jquery-1.11.1.min.js"></script>
     <script src="template/js/bootstrap.min.js"></script>
 </head>

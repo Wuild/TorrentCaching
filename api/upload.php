@@ -26,17 +26,17 @@ if (isset($_POST['upload'])) {
         list($ann, $info) = Bcode::dict_check($dict, "announce(string):info");
 
         $infohash = strtoupper(sha1($info["string"]));
-        $filename = $infohash . ".torrent";
+        $filename = $infohash;
 
-        $file_path = PATH_TORRENTS . $filename;
-        $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . MAGNET_TRACKERS;
+        $file_path = _configs()->paths->torrents . $filename;
+        $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . "&tr=" . implode("&tr=", _configs()->trackers);
 
         if (move_uploaded_file($file['tmp_name'], $file_path)) {
             $array = array(
                 "error" => false,
                 "message" => "The torrent has been successfully uploaded",
-                "url" => URL . "torrent/" . $filename,
-                "magnet" = $magnet_link
+                "url" => _configs()->website->url . $filename,
+                "magnet" => $magnet_link
             );
             die(json_encode($array));
         }

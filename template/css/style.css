@@ -1,0 +1,50 @@
+body{
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+}
+
+.header {
+    margin-top: 20px;
+}
+
+.navbar-default {
+    background: #3276b1;
+    border: 1px solid #2d649a;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    background: #3582c0;
+    color: #ffffff;
+}
+
+.navbar-default .navbar-text{
+    color: #ffffff;
+}
+
+
+.page-header {
+    margin-top: 10px;
+}
+
+.content{
+    float:left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.footer{
+    float:left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.jumbotron{
+    background: #f8f8f8;
+}

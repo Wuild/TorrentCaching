@@ -24,12 +24,14 @@
 <div class="page-header">
     <h4>Json return code</h4>
 </div>
-<pre>
+<pre style="white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;">
+<?php
     $array = array(
         "error" => false,
         "message" => "The torrent has been successfully uploaded",
-        "url" => URL . "torrent/" . strtoupper(sha1("dexter.s03.e07")) . ".torrent",
-        "magnet" => "magnet:?xt=urn:btih:" . strtoupper(sha1("dexter.s03.e07")) . MAGNET_TRACKERS
+        "url" => _configs()->website->url . "torrent/" . strtoupper(sha1("dexter.s03.e07")) . ".torrent",
+        "magnet" => "magnet:?xt=urn:btih:" . strtoupper(sha1("dexter.s03.e07")) . _configs()->trackers
     );
     echo json_encode($array);
+?>
 </pre>

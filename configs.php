@@ -4,7 +4,17 @@ $config = new stdClass();
 
 $config->website = new stdClass();
 $config->website->name = "TorrentCaching";
-$config->website->url = "http://torrentcaching.com/";
+
+$url = $_SERVER['HTTP_HOST'];
+$url = rtrim($url, '/') . '/';
+if (isset($_SERVER['HTTPS']))
+    $url = "https://" . $url;
+else if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == "https")
+    $url = "https://" . $url;
+else
+    $url = "http://" . $url;
+
+$config->website->url = $url;
 $config->website->keywords = "torrent, cache, tfc, torrentcaching, caching";
 $config->website->description = "Upload and cache torrent files.";
 

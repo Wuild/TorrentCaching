@@ -7,7 +7,7 @@ $config->website->name = "TorrentCaching";
 
 $url = $_SERVER['HTTP_HOST'];
 $url = rtrim($url, '/') . '/';
-if (isset($_SERVER['HTTPS']))
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on")
     $url = "https://" . $url;
 else if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == "https")
     $url = "https://" . $url;

@@ -6,7 +6,7 @@ class Bcode {
      * Info
      * @param type $f
      * @param type $ms
-     * @return type 
+     * @return type
      */
     static function bdec_file($f, $ms) {
         $fp = fopen($f, "rb");
@@ -20,7 +20,7 @@ class Bcode {
     /**
      * Info
      * @param type $s
-     * @return type 
+     * @return type
      */
     static function bdec($s) {
         if (preg_match('/^(\d+):/', $s, $m)) {
@@ -54,7 +54,7 @@ class Bcode {
     /**
      * Info
      * @param type $s
-     * @return type 
+     * @return type
      */
     static function bdec_dict($s) {
         if ($s[0] != "d")
@@ -90,7 +90,7 @@ class Bcode {
     /**
      * Info
      * @param type $s
-     * @return type 
+     * @return type
      */
     static function bdec_list($s) {
         if ($s[0] != "l")
@@ -120,7 +120,7 @@ class Bcode {
      * @param type $d
      * @param type $s
      * @return type
-     * @throws Exception 
+     * @throws Exception
      */
     static function dict_check($d, $s) {
         if ($d["type"] != "dictionary")
@@ -154,7 +154,7 @@ class Bcode {
      * @param type $k
      * @param type $t
      * @return type
-     * @throws Exception 
+     * @throws Exception
      */
     static function dict_get($d, $k, $t) {
         if ($d["type"] != "dictionary")
@@ -170,7 +170,7 @@ class Bcode {
 
     /**
      * Info
-     * @param type $d 
+     * @param type $d
      */
     static function benc_resp($d) {
         Bcode::benc_resp_raw(Bcode::benc(array('type' => 'dictionary', 'value' => $d)));
@@ -178,7 +178,7 @@ class Bcode {
 
     /**
      * Info
-     * @param type $x 
+     * @param type $x
      */
     static function benc_resp_raw($x) {
         header("Content-Type: text/plain");
@@ -195,7 +195,7 @@ class Bcode {
     /**
      * Info
      * @param type $obj
-     * @return type 
+     * @return type
      */
     static function benc($obj) {
         if (!is_array($obj) || !isset($obj["type"]) || !isset($obj["value"]))
@@ -218,7 +218,7 @@ class Bcode {
     /**
      * Info
      * @param type $s
-     * @return type 
+     * @return type
      */
     static function benc_str($s) {
         return strlen($s) . ":$s";
@@ -227,7 +227,7 @@ class Bcode {
     /**
      * Info
      * @param type $i
-     * @return type 
+     * @return type
      */
     static function benc_int($i) {
         return "i" . $i . "e";
@@ -236,7 +236,7 @@ class Bcode {
     /**
      * Info
      * @param type $a
-     * @return string 
+     * @return string
      */
     static function benc_list($a) {
         $s = "l";
@@ -250,7 +250,7 @@ class Bcode {
     /**
      * Info
      * @param type $d
-     * @return string 
+     * @return string
      */
     static function benc_dict($d) {
         $s = "d";

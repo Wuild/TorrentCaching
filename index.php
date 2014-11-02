@@ -2,14 +2,16 @@
 
 include("init.php");
 
-$mod = (isset($_GET['module'])) ? $_GET['module'] : "start";
+define("PAGE_URL", isset($_GET['page_url']) ? $_GET['page_url'] : "start");
+define("PAGE_ACTION", isset($_GET['page_action']) ? $_GET['page_action'] : "main");
 
-define("CURRENT_MODULE", $mod);
 
-$module = new Template(PATH_MODULE);
-$content = $module->buildVar($mod . ".php");
-
-$tpl = new Template(PATH_TEMPLATE);
-$tpl->main_content = $content;
-$tpl->build("template.php");
-?>
+if (preg_match("/^([0-F]{40})\.torrent/i", PAGE_URL.".torrent") && file_exists(_configs()->paths->torrents . PAGE_URL.".torrent")) {
+    $file = file_get_contents(_configs()->paths->torrents . PAGE_URL.".torrent");
+    header('Content-Disposition: attachment; filename="' . PAGE_URL . '"');
+    header("Content-Type: application/x-bittorrent");
+    die($file);
+} else {
+    $tpl = new Template(_configs()->paths->template . "template.php");
+    echo $tpl->Display();
+}

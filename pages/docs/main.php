@@ -30,7 +30,7 @@
         "error" => false,
         "message" => "The torrent has been successfully uploaded",
         "url" => _configs()->website->url . "torrent/" . strtoupper(sha1("dexter.s03.e07")) . ".torrent",
-        "magnet" => "magnet:?xt=urn:btih:" . strtoupper(sha1("dexter.s03.e07")) . _configs()->trackers
+        "magnet" => "magnet:?xt=urn:btih:" . strtoupper(sha1("dexter.s03.e07")) . "&tr=" . implode("&tr=", _configs()->trackers)
     );
     echo json_encode($array);
 ?>

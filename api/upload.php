@@ -31,7 +31,7 @@ if (isset($_POST['upload'])) {
         $file_path = _configs()->paths->torrents . $filename;
         $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . "&tr=" . implode("&tr=", _configs()->trackers);
 
-        if (move_uploaded_file($file['tmp_name'], $file_path)) {
+        if (move_uploaded_file($file['tmp_name'], $file_path . '.torrent')) {
             $array = array(
                 "error" => false,
                 "message" => "The torrent has been successfully uploaded",

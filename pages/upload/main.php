@@ -36,7 +36,7 @@ if (isset($_POST['upload'])) {
         $magnet_link = 'magnet:?xt=urn:btih:' . $infohash . "&tr=" . implode("&tr=", _configs()->trackers);
 
         if (move_uploaded_file($file['tmp_name'], $file_path . '.torrent')) {
-            echo "<div class='alert alert-success'>The torrent has been successfully uploaded, to download it follow the link below<br />  <a href='" . _configs()->website->url . $filename . "'>" . _configs()->website->url . $filename . "</a><br /><a href='" . $magnet_link . "'>Magnet link</a> | <a href='". _configs()->website->url . '/text/' . $filename . "'>Text</a></div>";
+            echo "<div class='alert alert-success'>The torrent has been successfully uploaded, to download it follow the link below<br />  <a href='" . _configs()->website->url . $filename . "'>" . _configs()->website->url . $filename . "</a><br /><a href='" . $magnet_link . "'>Magnet link</a> | <a href='". _configs()->website->url . 'text/' . $filename . "'>Text</a></div>";
         }
     } Catch (Exception $e) {
         echo $e->getMessage();

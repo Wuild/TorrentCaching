@@ -38,7 +38,7 @@ if (isset($_POST['upload'])) {
         if (move_uploaded_file($file['tmp_name'], $file_path . '.torrent')) {
             echo "<div class='alert alert-success'>The torrent has been successfully uploaded, to download it follow the link below<br />
 			<a href='" . _configs()->website->url . $filename . "'>" . _configs()->website->url . $filename . "</a><br />
-			<a href='" . $magnet_link . "'>Magnet link</a> | <a href='". _configs()->website->url . 'text/' . $filename . "'>Text</a>
+			<a href='" . $magnet_link . "'>Magnet link</a> | <a href='". _configs()->website->url . 'text/' . $filename . "'>Text</a> | 
 			<a href='". _configs()->website->url . 'link/' . $filename . "'>Link</a></div>";
         }
     } Catch (Exception $e) {

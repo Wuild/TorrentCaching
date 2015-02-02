@@ -15,7 +15,7 @@
 
 		<?php
 	} else {
-		echo "Torrent doesn't exist.  Did you forget to upload it?";
+		echo '<p style="text-align:center">Torrent doesn\'t exist.  Did you forget to upload it?</p>';
 	}
 	
 	?>

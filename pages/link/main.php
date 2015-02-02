@@ -1,7 +1,7 @@
 <div class="jumbotron">
 	<?php
 	$infohash = LINK_INFOHASH;
-	if (file_exists(_configs()->paths->torrents . $infohash . '.torrent') {
+	if (file_exists(_configs()->paths->torrents . $infohash . '.torrent')) {
 		$torrent_link = _configs()->website->url . $infohash;
 		$text_link = _configs()->website->url . 'text/' . $infohash;
 		$magnet_link = 'magnet:?xt=urn:btih:' . $infohash . '&tr=' . implode('&tr=', _configs()->trackers);?>

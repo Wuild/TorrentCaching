@@ -14,7 +14,7 @@ else
 	define("PAGE_URL", isset($_GET['page_url']) ? $_GET['page_url'] : "start");
 
 if (file_exists(_configs()->paths->torrents . LINK_INFOHASH. '.torrent') && preg_match("/^[0-F]{40}/i", LINK_INFOHASH)) {
-	if (LINK_TYPE == 'torrent' || LINK_TYPE == 'text') {
+	if (LINK_TYPE == 'torrent' || LINK_TYPE == 'text' || LINK_TYPE == '') {
 		$file = file_get_contents(_configs()->paths->torrents. LINK_INFOHASH. '.torrent');
 		if (LINK_TYPE == 'text') {
 			header('Content-Disposition: attachment; filename="'. LINK_INFOHASH. '.txt"');

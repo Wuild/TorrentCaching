@@ -7,8 +7,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule .* - [L]
 
 RewriteRule ^(torrent|text|link)?\/?([0-F]{40})(\.torrent)?/?$ index.php?link_type=$1&infohash=$2 [NC,QSA,L]
-#RewriteRule ^(torrent|text|link)?\/?([0-F]{40})(\.torrent)?/?$ index.php?page_url=$2&page_action=$1 [NC,QSA,L]
 RewriteRule ^([_A-Za-z0-9-]+)/?$ index.php?page_url=$1 [NC,QSA,L]
-#RewriteRule ^([_A-Za-z0-9-]+)\/([_A-Za-z0-9-]+)/?$ index.php?page_url=$1&page_action=$2 [NC,QSA,L]
+RewriteRule ^([_A-Za-z0-9-]+)\/([_A-Za-z0-9-]+)/?$ index.php?page_url=$1&page_action=$2 [NC,QSA,L]
 
 </IfModule>
